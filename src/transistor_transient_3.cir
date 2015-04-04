@@ -1,0 +1,25 @@
+* D:\gruppe8\v2\transistor_transient_3.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 10:49:08 2005
+
+
+.PARAM         Amplitude=1V 
+
+** Analysis setup **
+.tran 0ns 2ms 0 2us
+.STEP LIN PARAM Amplitude 0.1V 2V 0.1V 
+.STMLIB "transistor_transient_3.stl"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "transistor_transient_3.net"
+.INC "transistor_transient_3.als"
+
+
+.probe
+
+
+.END

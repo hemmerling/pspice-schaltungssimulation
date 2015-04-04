@@ -1,0 +1,102 @@
+
+**** 03/17/05 10:12:28 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\gleichstromschaltung_wgen_4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 10:12:28 2005
+
+
+
+** Analysis setup **
+.tran 0ms 20ms 0 10000
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "gleichstromschaltung_wgen_4.net"
+
+**** INCLUDING gleichstromschaltung_wgen_4.net ****
+* Schematics Netlist *
+
+
+
+R_R2         $N_0002 $N_0001  20k  
+R_R4         0 $N_0001  10k  
+R_R3         $N_0001 $N_0003  10k  
+R_R1         $N_0004 $N_0003  20k  
+V_U1         $N_0004 0  
++PULSE 0V 1V 0 0.5ms 0.5ms 5ms 10ms
+V_U2         $N_0002 0  
++PULSE 1V 0V 0 0.5ms 0.5ms 2.5ms 5ms
+
+**** RESUMING gleichstromschaltung_wgen_4.cir ****
+.INC "gleichstromschaltung_wgen_4.als"
+
+
+
+**** INCLUDING gleichstromschaltung_wgen_4.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R2            R2(1=$N_0002 2=$N_0001 )
+R_R4            R4(1=0 2=$N_0001 )
+R_R3            R3(1=$N_0001 2=$N_0003 )
+R_R1            R1(1=$N_0004 2=$N_0003 )
+V_U1            U1(+=$N_0004 -=0 )
+V_U2            U2(+=$N_0002 -=0 )
+.ENDALIASES
+
+
+**** RESUMING gleichstromschaltung_wgen_4.cir ****
+.probe
+
+
+.END
+
+**** 03/17/05 10:12:28 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\gleichstromschaltung_wgen_4.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)     .2727                   ($N_0002)    1.0000                       
+
+($N_0003)     .1818                   ($N_0004)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_U1         9.091E-06
+    V_U2        -3.636E-05
+
+    TOTAL POWER DISSIPATION   3.64E-05  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

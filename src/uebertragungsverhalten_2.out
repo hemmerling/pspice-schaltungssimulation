@@ -1,0 +1,166 @@
+
+**** 03/17/05 11:16:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\uebertragungsverhalten_2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 11:16:22 2005
+
+
+
+** Analysis setup **
+.tran 0ns 2ms 0 2us
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "uebertragungsverhalten_2.net"
+
+**** INCLUDING uebertragungsverhalten_2.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0  
++SIN 0 3V 1k 0 0 0
+R_R2         $N_0003 $N_0002  10k  
+R_R1         0 $N_0003  1k  
+V_V-         $N_0004 0 9V
+X_N1A         $N_0003 $N_0001 $N_0004 $N_0005 $N_0002 LM324
+V_V+         0 $N_0005 9V
+
+**** RESUMING uebertragungsverhalten_2.cir ****
+.INC "uebertragungsverhalten_2.als"
+
+
+
+**** INCLUDING uebertragungsverhalten_2.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=$N_0001 -=0 )
+R_R2            R2(1=$N_0003 2=$N_0002 )
+R_R1            R1(1=0 2=$N_0003 )
+V_V-            V-(+=$N_0004 -=0 )
+X_N1A           N1A(+=$N_0003 -=$N_0001 V+=$N_0004 V-=$N_0005 OUT=$N_0002 )
+V_V+            V+(+=0 -=$N_0005 )
+.ENDALIASES
+
+
+**** RESUMING uebertragungsverhalten_2.cir ****
+.probe
+
+
+.END
+
+**** 03/17/05 11:16:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\uebertragungsverhalten_2.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_N1A.dx        
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 03/17/05 11:16:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\uebertragungsverhalten_2.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_N1A.qx        
+               PNP             
+          IS  800.000000E-18 
+          BF  166.7          
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.2          
+           D     .52         
+
+
+**** 03/17/05 11:16:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\uebertragungsverhalten_2.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)     .0017                       
+
+($N_0003) 193.3E-06                   ($N_0004)    9.0000                       
+
+($N_0005)   -9.0000                   (X_N1A.6)-14.39E-06                       
+
+(X_N1A.7)     .0505                   (X_N1A.8)     .0505                       
+
+(X_N1A.9)    0.0000                   (X_N1A.10)     .6078                      
+
+(X_N1A.11)   -8.9602                  (X_N1A.12)   -8.9604                      
+
+(X_N1A.13)     .5939                  (X_N1A.14)     .5939                      
+
+(X_N1A.53)    7.5000                  (X_N1A.54)   -8.3500                      
+
+(X_N1A.90)     .9767                  (X_N1A.91)   40.0000                      
+
+(X_N1A.92)  -40.0000                  (X_N1A.99)    0.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         4.495E-08
+    V_V-        -1.997E-03
+    V_V+        -1.997E-03
+    X_N1A.vb    -1.439E-10
+    X_N1A.vc     7.499E-12
+    X_N1A.ve     8.352E-12
+    X_N1A.vlim   9.767E-04
+    X_N1A.vlp   -3.902E-11
+    X_N1A.vln   -4.098E-11
+
+    TOTAL POWER DISSIPATION   3.59E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .16
+

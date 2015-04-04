@@ -1,0 +1,22 @@
+* D:\gruppe8\v2\uebertragungsverhalten_2.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 11:16:22 2005
+
+
+
+** Analysis setup **
+.tran 0ns 2ms 0 2us
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "uebertragungsverhalten_2.net"
+.INC "uebertragungsverhalten_2.als"
+
+
+.probe
+
+
+.END

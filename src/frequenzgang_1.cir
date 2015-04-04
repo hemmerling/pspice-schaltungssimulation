@@ -1,0 +1,22 @@
+* D:\gruppe8\v2\frequenzgang_1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 08:19:47 2005
+
+
+
+** Analysis setup **
+.ac DEC 1000 100Hz 10KHz
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "frequenzgang_1.net"
+.INC "frequenzgang_1.als"
+
+
+.probe
+
+
+.END

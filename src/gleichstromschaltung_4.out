@@ -1,0 +1,139 @@
+
+**** 03/16/05 11:59:46 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\users\fh\simlabor\v2_pspice\gleichstromschaltung_4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Mar 16 11:59:45 2005
+
+
+
+** Analysis setup **
+.sens V(V_V1) V(V_V2)
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "gleichstromschaltung_4.net"
+
+**** INCLUDING gleichstromschaltung_4.net ****
+* Schematics Netlist *
+
+
+
+R_R2         $N_0002 $N_0001  20k  
+R_R4         0 $N_0001  10k  
+R_R3         $N_0001 $N_0003  10k  
+R_R1         $N_0004 $N_0003  20k  
+V_V2         $N_0002 0 1V
+V_V1         $N_0004 0 1V
+
+**** RESUMING gleichstromschaltung_4.cir ****
+.INC "gleichstromschaltung_4.als"
+
+
+
+**** INCLUDING gleichstromschaltung_4.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R2            R2(1=$N_0002 2=$N_0001 )
+R_R4            R4(1=0 2=$N_0001 )
+R_R3            R3(1=$N_0001 2=$N_0003 )
+R_R1            R1(1=$N_0004 2=$N_0003 )
+V_V2            V2(+=$N_0002 -=0 )
+V_V1            V1(+=$N_0004 -=0 )
+.ENDALIASES
+
+
+**** RESUMING gleichstromschaltung_4.cir ****
+.probe
+
+
+.END
+
+**** 03/16/05 11:59:46 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\users\fh\simlabor\v2_pspice\gleichstromschaltung_4.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)     .4545                   ($N_0002)    1.0000                       
+
+($N_0003)     .6364                   ($N_0004)    1.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -2.727E-05
+    V_V1        -1.818E-05
+
+    TOTAL POWER DISSIPATION   4.55E-05  WATTS
+
+
+**** 03/16/05 11:59:46 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\users\fh\simlabor\v2_pspice\gleichstromschaltung_4.sch
+
+
+ ****     DC SENSITIVITY ANALYSIS          TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+DC SENSITIVITIES OF OUTPUT V(V_V1)
+
+         ELEMENT         ELEMENT         ELEMENT       NORMALIZED
+          NAME            VALUE       SENSITIVITY     SENSITIVITY
+                                      (VOLTS/UNIT) (VOLTS/PERCENT)
+
+          R_R2          2.000E+04       0.000E+00       0.000E+00
+          R_R4          1.000E+04       0.000E+00       0.000E+00
+          R_R3          1.000E+04       0.000E+00       0.000E+00
+          R_R1          2.000E+04       0.000E+00       0.000E+00
+          V_V2          1.000E+00       0.000E+00       0.000E+00
+          V_V1          1.000E+00       1.000E+00       1.000E-02
+
+
+DC SENSITIVITIES OF OUTPUT V(V_V2)
+
+         ELEMENT         ELEMENT         ELEMENT       NORMALIZED
+          NAME            VALUE       SENSITIVITY     SENSITIVITY
+                                      (VOLTS/UNIT) (VOLTS/PERCENT)
+
+          R_R2          2.000E+04       0.000E+00       0.000E+00
+          R_R4          1.000E+04       0.000E+00       0.000E+00
+          R_R3          1.000E+04       0.000E+00       0.000E+00
+          R_R1          2.000E+04       0.000E+00       0.000E+00
+          V_V2          1.000E+00       1.000E+00       1.000E-02
+          V_V1          1.000E+00       0.000E+00       0.000E+00
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

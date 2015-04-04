@@ -1,0 +1,22 @@
+* D:\users\fh\simlabor\v2_pspice\gleichstromschaltung_4.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Mar 16 11:59:45 2005
+
+
+
+** Analysis setup **
+.sens V(V_V1) V(V_V2)
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "gleichstromschaltung_4.net"
+.INC "gleichstromschaltung_4.als"
+
+
+.probe
+
+
+.END

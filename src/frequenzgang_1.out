@@ -1,0 +1,120 @@
+
+**** 03/17/05 08:21:48 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\frequenzgang_1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 08:19:47 2005
+
+
+
+** Analysis setup **
+.ac DEC 1000 100Hz 10KHz
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "frequenzgang_1.net"
+
+**** INCLUDING frequenzgang_1.net ****
+* Schematics Netlist *
+
+
+
+C_C1         0 $N_0001  1u  
+C_C2         0 $N_0002  1u  
+C_C3         0 $N_0003  1u  
+C_C4         0 $N_0004  1u  
+L_L1         $N_0001 $N_0005  10mH  
+L_L2         $N_0002 $N_0006  10mH  
+L_L3         $N_0003 $N_0007  10mH  
+L_L4         $N_0004 $N_0008  10mH  
+R_R1         $N_0005 $N_0009  200  
+R_R2         $N_0006 $N_0009  100  
+R_R3         $N_0007 $N_0009  50  
+R_R4         $N_0008 $N_0009  25  
+V_Vin         $N_0009 0  AC 1V
++SIN 0V 0V 0 0 0 0
+
+**** RESUMING frequenzgang_1.cir ****
+.INC "frequenzgang_1.als"
+
+
+
+**** INCLUDING frequenzgang_1.als ****
+* Schematics Aliases *
+
+.ALIASES
+C_C1            C1(1=0 2=$N_0001 )
+C_C2            C2(1=0 2=$N_0002 )
+C_C3            C3(1=0 2=$N_0003 )
+C_C4            C4(1=0 2=$N_0004 )
+L_L1            L1(1=$N_0001 2=$N_0005 )
+L_L2            L2(1=$N_0002 2=$N_0006 )
+L_L3            L3(1=$N_0003 2=$N_0007 )
+L_L4            L4(1=$N_0004 2=$N_0008 )
+R_R1            R1(1=$N_0005 2=$N_0009 )
+R_R2            R2(1=$N_0006 2=$N_0009 )
+R_R3            R3(1=$N_0007 2=$N_0009 )
+R_R4            R4(1=$N_0008 2=$N_0009 )
+V_Vin           Vin(+=$N_0009 -=0 )
+.ENDALIASES
+
+
+**** RESUMING frequenzgang_1.cir ****
+.probe
+
+
+.END
+
+**** 03/17/05 08:21:48 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\frequenzgang_1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   ($N_0004)    0.0000                       
+
+($N_0005)    0.0000                   ($N_0006)    0.0000                       
+
+($N_0007)    0.0000                   ($N_0008)    0.0000                       
+
+($N_0009)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .16
+

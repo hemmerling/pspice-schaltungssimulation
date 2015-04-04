@@ -1,0 +1,15 @@
+* Schematics Netlist *
+
+
+
+C_C1         $N_0001 $N_0002  10u  
+R_RC         $N_0004 $N_0003  10k  
+Q_T1         $N_0004 $N_0002 $N_0005 QBC548B
+R_R2         0 $N_0002  20k  
+V_VB         $N_0003 0 15V
+C_C2         $N_0004 $N_0006  10u  
+R_RL         0 $N_0006  1M  
+R_R1         $N_0002 $N_0003  100k  
+R_RE         0 $N_0005  2k  
+V_Vin         $N_0001 0  AC 1V
++SIN 0 1V 1Khz 0 0 0

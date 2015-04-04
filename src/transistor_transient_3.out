@@ -1,0 +1,826 @@
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 10:49:08 2005
+
+
+.PARAM         Amplitude=1V 
+
+** Analysis setup **
+.tran 0ns 2ms 0 2us
+.STEP LIN PARAM Amplitude 0.1V 2V 0.1V 
+.STMLIB "transistor_transient_3.stl"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "transistor_transient_3.net"
+
+**** INCLUDING transistor_transient_3.net ****
+* Schematics Netlist *
+
+
+
+C_C1         $N_0001 $N_0002  10u  
+R_RC         $N_0004 $N_0003  10k  
+Q_T1         $N_0004 $N_0002 $N_0005 QBC548B
+R_R2         0 $N_0002  20k  
+V_VB         $N_0003 0 15V
+C_C2         $N_0004 $N_0006  10u  
+R_R1         $N_0002 $N_0003  100k  
+R_RE         0 $N_0005  2k  
+V_Vin         $N_0001 0  
++SIN 0 {Amplitude} 1Khz 0 0 0
+R_RL         0 $N_0006  1000K  
+
+**** RESUMING transistor_transient_3.cir ****
+.INC "transistor_transient_3.als"
+
+
+
+**** INCLUDING transistor_transient_3.als ****
+* Schematics Aliases *
+
+.ALIASES
+C_C1            C1(1=$N_0001 2=$N_0002 )
+R_RC            RC(1=$N_0004 2=$N_0003 )
+Q_T1            T1(c=$N_0004 b=$N_0002 e=$N_0005 )
+R_R2            R2(1=0 2=$N_0002 )
+V_VB            VB(+=$N_0003 -=0 )
+C_C2            C2(1=$N_0004 2=$N_0006 )
+R_R1            R1(1=$N_0002 2=$N_0003 )
+R_RE            RE(1=0 2=$N_0005 )
+V_Vin           Vin(+=$N_0001 -=0 )
+R_RL            RL(1=0 2=$N_0006 )
+.ENDALIASES
+
+
+**** RESUMING transistor_transient_3.cir ****
+.probe
+
+
+.END
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               QBC548B         
+               NPN             
+          IS    7.049000E-15 
+          BF  374.6          
+          NF    1            
+         VAF   62.79         
+         IKF     .08157      
+         ISE   68.000000E-15 
+          NE    1.576        
+          BR    1            
+          NR    1            
+         IKR    3.924        
+         ISC   12.400000E-15 
+          NC    1.835        
+          NK     .4767       
+          RC     .9747       
+         CJE   11.500000E-12 
+         VJE     .5          
+         MJE     .6715       
+         CJC    5.250000E-12 
+         VJC     .5697       
+         MJC     .3147       
+          TF  410.200000E-12 
+         XTF   40.06         
+         VTF   10            
+         ITF    1.491        
+          TR   10.000000E-09 
+         XTB    1.5          
+          CN    2.42         
+           D     .87         
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .1   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .2   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .3   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .4   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .5   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .6   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .7   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .8   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =     .9   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.1   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.2   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.3   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.4   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.5   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.6   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.7   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.8   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    1.9   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+**** 03/17/05 10:49:08 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\gruppe8\v2\transistor_transient_3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM AMPLITUDE =    2     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    2.4499                       
+
+($N_0003)   15.0000                   ($N_0004)    6.0804                       
+
+($N_0005)    1.7899                   ($N_0006)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VB        -1.017E-03
+    V_Vin        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.53E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            2.09
+

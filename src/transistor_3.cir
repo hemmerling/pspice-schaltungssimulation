@@ -1,0 +1,24 @@
+* D:\users\fh\simlabor\v2_pspice\transistor_3.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Mar 16 09:36:16 2005
+
+
+
+** Analysis setup **
+.tran 0ns 2ms 0 2us
+.STEP  PARAM Vin LIST 
++ 1V,2V
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "transistor_3.net"
+.INC "transistor_3.als"
+
+
+.probe
+
+
+.END

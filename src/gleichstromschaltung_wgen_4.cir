@@ -1,0 +1,22 @@
+* D:\gruppe8\v2\gleichstromschaltung_wgen_4.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Mar 17 10:12:28 2005
+
+
+
+** Analysis setup **
+.tran 0ms 20ms 0 10000
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "gleichstromschaltung_wgen_4.net"
+.INC "gleichstromschaltung_wgen_4.als"
+
+
+.probe
+
+
+.END
